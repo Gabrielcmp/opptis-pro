@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @opening.title %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @opening.type %>
+</p>
+
+<p>
+  <strong>Beginning date:</strong>
+  <%= @opening.beginning_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @opening.end_date %>
+</p>
+
+<p>
+  <strong>Pref sex:</strong>
+  <%= @opening.pref_sex %>
+</p>
+
+<p>
+  <strong>Pref age:</strong>
+  <%= @opening.pref_age %>
+</p>
+
+<p>
+  <strong>Previous experience:</strong>
+  <%= @opening.previous_experience %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @opening.description %>
+</p>
+
+<%= link_to 'Edit', edit_opening_path(@opening) %> |
+<%= link_to 'Back', openings_path %>

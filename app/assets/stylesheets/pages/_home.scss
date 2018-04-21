@@ -1,0 +1,206 @@
+.wrapper-blue1 {
+  background-color: $blue1;
+  padding: 0 0 50px;
+}
+
+.wrapper-blue2 {
+  background-color: $blue2;
+  padding: 50px 0;
+}
+
+.wrapper-blue3 {
+  background-color: $blue3;
+  padding: 50px 0;
+}
+
+em {
+  color: $blue1;
+  font-style: normal;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 40px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.home-text-container {
+  display: flex;
+  min-height: 360px;
+  align-items: center;
+  .home-text-white {
+    color: white;
+  }
+
+}
+.home-text-links {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 180px 180px;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+}
+.home-text-content {
+  h2 {
+    color: $blue1;
+  }
+}
+
+.home-text-left {
+  padding-left: 30px;
+}
+
+.btn-gplay {
+  background-image: url("/images/gplay.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 150px;
+  height: 48px;
+  padding: 1px;
+  display: inline-block;
+}
+
+.banner-image {
+  width: 100%;
+  min-height: 360px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.banner-container {
+  padding-left: 15px;
+}
+@media screen and (min-width: 768px) {
+  .banner-container {
+    margin-left: calc(50vw - 375px);
+  }
+  #candidato-banner {
+    min-height: 450px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .banner-container {
+    margin-left: calc(50% - 485px);
+  }
+  #candidato-banner {
+    min-height: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .banner-container {
+    margin-left: calc(50% - 585px);
+  }
+  #candidato-banner {
+    min-height: 450px;
+  }
+}
+
+.left-banner {
+  background-position: right;
+}
+
+.home-restaurants {
+  margin: -170px -150px 50px -150px;
+  height: 30vh;
+  background-image: url('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_1400/v1517450056/restaurantes_rgbgws.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.vinicius-image {
+  width: 100%;
+  min-height: 360px;
+  background-image: url('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_400/v1517450057/vinicius_r_bcw7cx.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.logo-div {
+  display: flex;
+  justify-content: space-around;
+  .logo-div-small {
+    display: flex;
+    width: 100px;
+  }
+  .logo-div-md {
+    display: flex;
+    width: 200px;
+  }
+}
+
+.logo-text {
+  p {
+    margin-top: 30px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+
+.home-grid-1 {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+
+}
+
+.home-grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+
+}
+
+@media screen and (max-width: 780px) {
+  .home-grid-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .home-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .home-text-left {
+    padding-left: 0px;
+  }
+
+  .home-text-links {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .home-text-container {
+    min-height: 200px;
+  }
+
+  #restaurant-grid {
+    margin-bottom: 170px;
+  }
+}
+
+// @media screen and (max-width: 400px) {
+//   h1 {
+//     font-size: 24px;
+//   }
+//   p {
+//     font-size: 16px;
+//   }
+//   .home-text-links {
+//     display: block;
+//   }
+//   .btn-gplay {
+//     margin: 10 0;
+//   }
+// }

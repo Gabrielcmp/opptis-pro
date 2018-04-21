@@ -1,0 +1,57 @@
+<%= form_with(model: opening, local: true) do |form| %>
+  <% if opening.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(opening.errors.count, "error") %> prohibited this opening from being saved:</h2>
+
+      <ul>
+      <% opening.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :opening_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type, id: :opening_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :beginning_date %>
+    <%= form.text_field :beginning_date, id: :opening_beginning_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.text_field :end_date, id: :opening_end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pref_sex %>
+    <%= form.text_field :pref_sex, id: :opening_pref_sex %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pref_age %>
+    <%= form.text_field :pref_age, id: :opening_pref_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :previous_experience %>
+    <%= form.text_field :previous_experience, id: :opening_previous_experience %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :opening_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
