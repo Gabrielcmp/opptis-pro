@@ -69,6 +69,6 @@ class OpeningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def opening_params
-      params.require(:opening).permit(:title, :type, :beginning_date, :end_date, :pref_sex, :pref_age, :previous_experience, :description)
+      params.require(:opening).permit(:title, :beginning_date, :end_date, :pref_sex, :pref_age, :previous_experience, :description)
     end
 end

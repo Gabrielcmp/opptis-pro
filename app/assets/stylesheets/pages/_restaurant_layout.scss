@@ -1,0 +1,56 @@
+.restaurante-logo {
+  text-align: center;
+  background-color: $blue1;
+  padding: 10% 0;
+  h1 {
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
+.tab-container {
+  display: flex;
+  h2 {
+    font-weight: 600;
+  }
+}
+
+.tab-selector {
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-edit {
+  padding-bottom: 2%;
+  text-align: center;
+}
+
+.button-search {
+  background-color: $blue1;
+  padding: 1% 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .restaurante-logo {
+    h1 {
+      font-size: 20px;
+     }
+    }
+
+
+.tab-selector {
+  h2 {
+    font-size: 14px;
+    }
+  }
+
+.button-edit {
+  padding-bottom: 5%;
+}
+
+.button-search {
+  padding: 3% 0;
+}
+}

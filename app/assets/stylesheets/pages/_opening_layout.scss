@@ -1,0 +1,80 @@
+.opening-container {
+  display: flex;
+  padding: 3% 5%;
+}
+
+
+.openings-details {
+  width: 70%;
+  h2 {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: $blue1;
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  h3 {
+  margin-top: 0;
+  color:$blue1;
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 10px;
+  }
+
+  p {
+      font-size: 18px;
+      color: $gray1;
+      margin-bottom:5px;
+  }
+
+  h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+}
+
+
+.opening-actions {
+  width: 30%;
+
+  p{
+    font-size: 18px;
+  }
+}
+
+.button-profile {
+  text-align: center;
+  padding: 5% 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .openings-details {
+    width: 80%;
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    h4 {
+      font-size: 12px;
+    }
+  }
+
+
+  .opening-actions {
+    width: 25%;
+    p {
+    font-size: 12px;
+    }
+  }
+}
