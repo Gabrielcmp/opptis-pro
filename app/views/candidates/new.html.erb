@@ -10,8 +10,8 @@
         <p>Envie uma foto! Uma fotografia de qualidade pode aumentar suas chances de ser contratado. *De preferência use um fundo neutro e uma roupa social. :)</p>
       </div>
       <div class="candidate-form">
-        <%= link_to 'substituir cloudinary' '#' class: 'btn btn-primary disabled' %>
-        <%= link_to 'proximo' '#candidate-new-2' class: 'btn btn-primary'%>
+        <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
+        <%= link_to 'proximo', '#candidate-new-2', class: 'btn btn-primary'%>
       </div>
 
     </div>
@@ -31,8 +31,8 @@
           <%= address.input :Cidade, label: false, hint: 'Cidade' %>
           <%= address.input :Estado, label: false, hint: 'Estado' %>
         <%= end %>
-        <%= link_to 'proximo' '#candidate-new-3' class: 'btn btn-primary'%>
-        <%= link_to 'voltar' '#candidate-new-1' %>
+        <%= link_to 'proximo', '#candidate-new-3', class: 'btn btn-primary'%>
+        <%= link_to 'voltar', '#candidate-new-1' %>
       </div>
 
     </div>
@@ -43,19 +43,28 @@
         <h2>Qual é o seu CPF?</h2>
         <p>Enviaremos um email de confirmação</p>
       </div>
-      <%= c.input :cpf %>
+      <%= c.input :cpf, label: false %>
       <div class="candidate-text">
         <h2>Qual é o seu número de telefone?</h2>
         <p>É por este número que o contratante entrará em contato</p>
       </div>
+      <%= c.input :phone, label: false %>
 
-
+      <%= link_to 'proximo', '#candidate-new-4', class: 'btn btn-primary'%>
+      <%= link_to 'voltar', '#candidate-new-2' %>
     </div>
 
     <div id="candidate-new-4">
 
+      <h2>Já trabalhou em restaurante?</h2>
+      <%= c.input :restaurant_experience, as: :radio_buttons, label: false %>
 
+      <h2>Conte-nos um pouco sobre suas experiências de trabalho</h2>
 
+      <%= c.input :previous_experience, label: false %>
+
+      <%= c.button :submit, label: 'Enviar'%>
+      <%= link_to 'voltar', '#candidate-new-3' %>
     </div>
 
 
