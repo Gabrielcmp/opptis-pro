@@ -1,41 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Openings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Type</th>
-      <th>Beginning date</th>
-      <th>End date</th>
-      <th>Pref sex</th>
-      <th>Pref age</th>
-      <th>Previous experience</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @openings.each do |opening| %>
-      <tr>
-        <td><%= opening.title %></td>
-        <td><%= opening.type %></td>
-        <td><%= opening.beginning_date %></td>
-        <td><%= opening.end_date %></td>
-        <td><%= opening.pref_sex %></td>
-        <td><%= opening.pref_age %></td>
-        <td><%= opening.previous_experience %></td>
-        <td><%= opening.description %></td>
-        <td><%= link_to 'Show', opening %></td>
-        <td><%= link_to 'Edit', edit_opening_path(opening) %></td>
-        <td><%= link_to 'Destroy', opening, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="opening-container">
+      <div class="openings-details">
+        <h2><%= opening.title%></h2>
+        <h3><%= opening.previous_experience %> </h3>
+        <p><%= opening.pref_sex %></p>
+        <p><%= opening.pref_age %></p>
+        <h4> <%= link_to 'Mais informações', opening %> </h4>
+      </div>
+      <div class="opening-actions">
+        <p><%= link_to 'Editar', edit_opening_path(opening) %></p>
+        <p><%= link_to 'Remover', opening, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    </div>
+    <hr>
+
     <% end %>
-  </tbody>
-</table>
+
+    <div class="button-profile">
+        <p><%= link_to 'Voltar para o Perfil', @restaurant%></p>
+    </div>
 
 <br>
 
-<%= link_to 'New Opening', new_opening_path %>
+    <div class="button-search">
+      <%= link_to "Cadastrar Nova Vaga", new_opening_path, class:"btn btn-primary"%>
+    </div>

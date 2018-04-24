@@ -12,43 +12,39 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :opening_title %>
+    <h2><%= form.label :title %>
+    <p><%= form.text_field :title, id: :opening_title %></h2></p>
+  </div>
+
+
+  <div class="field">
+    <h2><%= form.label :beginning_date %></h2>
+    <p><%= form.text_field :beginning_date, id: :opening_beginning_date %></p>
   </div>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type, id: :opening_type %>
+    <h2><%= form.label :end_date %></h2>
+    <p><%= form.text_field :end_date, id: :opening_end_date %></p>
   </div>
 
   <div class="field">
-    <%= form.label :beginning_date %>
-    <%= form.text_field :beginning_date, id: :opening_beginning_date %>
+    <h2><%= form.label :pref_sex %></h2>
+    <p><%= form.text_field :pref_sex, id: :opening_pref_sex %></p>
   </div>
 
   <div class="field">
-    <%= form.label :end_date %>
-    <%= form.text_field :end_date, id: :opening_end_date %>
+    <h2><%= form.label :pref_age %></h2>
+    <p><%= form.text_field :pref_age, id: :opening_pref_age %></p>
   </div>
 
   <div class="field">
-    <%= form.label :pref_sex %>
-    <%= form.text_field :pref_sex, id: :opening_pref_sex %>
+    <h2><%= form.label :previous_experience %></h2>
+    <p><%= form.text_field :previous_experience, id: :opening_previous_experience %></p>
   </div>
 
   <div class="field">
-    <%= form.label :pref_age %>
-    <%= form.text_field :pref_age, id: :opening_pref_age %>
-  </div>
-
-  <div class="field">
-    <%= form.label :previous_experience %>
-    <%= form.text_field :previous_experience, id: :opening_previous_experience %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :opening_description %>
+    <h2><%= form.label :description %></h2>
+    <p><%= form.text_area :description, id: :opening_description %></p>
   </div>
 
   <div class="actions">

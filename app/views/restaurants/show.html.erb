@@ -1,34 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper-restaurant">
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+  <div class="restaurante-logo">
+    <%= image_tag("https://via.placeholder.com/250x250")%>
+    <h1> <%= @restaurant.name%></h1>
+  </div>
 
-<p>
-  <strong>Cnpj:</strong>
-  <%= @restaurant.cnpj %>
-</p>
 
-<p>
-  <strong>Cousine:</strong>
-  <%= @restaurant.cousine %>
-</p>
+  <div class="tab-container">
+    <div class="tab-selector">
+      <h2>Dados do Restaurante</h2>
+    </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
+    <div class="tab-selector">
+      <h2>Dados de Contato</h2>
+    </div>
+  </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
 
-<p>
-  <strong>Formatted address:</strong>
-  <%= @restaurant.formatted_address %>
-</p>
+  <div>
+    <div class="profile-data">
+      <h3>Descrição</h3>
+      <p><%= @restaurant.description%></p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+      <h3>CNPJ</h3>
+      <p><%= @restaurant.cnpj%></p>
+
+      <h3>Endereço</h3>
+      <p><%= @restaurant.formatted_address%></p>
+    </div>
+
+    <div class="button-edit">
+      <%= link_to "Editar", edit_restaurant_path, class:"btn btn-primary"%>
+    </div>
+  </dib>
+
+  <div class="button-search">
+    <%= link_to "Buscar Candidatos", openings_path, class:"btn btn-primary"%>
+  </div>
+
+</div>
