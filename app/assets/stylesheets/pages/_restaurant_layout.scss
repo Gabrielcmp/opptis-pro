@@ -7,9 +7,15 @@
     font-weight: 600;
   }
 }
+
+.logo-size {
+  border-radius: 50%
+}
+
 .tab-container {
   display: flex;
   h2 {
+    font-size: 25px;
     font-weight: 600;
   }
 }
@@ -19,6 +25,21 @@
   width: 50vw;
   justify-content: center;
   text-align: center;
+}
+
+.profile-data {
+  h3 {
+    font-size:18px;
+    font-weight: 700;
+    padding: 0 35%;
+    color: $gray1;
+  }
+
+  p {
+    font-size: 18px;
+    padding: 0 35%;
+    color: $gray1;
+  }
 }
 
 .button-edit {
@@ -39,12 +60,27 @@
      }
     }
 
+.logo-size {
+  width:30%;
+  }
 
 .tab-selector {
   h2 {
     font-size: 14px;
     }
   }
+
+  .profile-data {
+  h3 {
+    font-size:14px;
+    padding: 0 5%;
+  }
+
+  p {
+    font-size: 14px;
+    padding: 0 5%;
+    }
+}
 
 .button-edit {
   padding-bottom: 5%;

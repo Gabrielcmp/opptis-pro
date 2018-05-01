@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421220601) do
+ActiveRecord::Schema.define(version: 20180424124313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20180421220601) do
     t.text "previous_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cpf"
+    t.boolean "restaurant_experience"
   end
 
   create_table "openings", force: :cascade do |t|

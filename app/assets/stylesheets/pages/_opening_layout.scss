@@ -44,10 +44,66 @@
   }
 }
 
+.openings-details-job {
+  width: 50%;
+  h2 {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: $blue1;
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  h3 {
+  margin-top: 0;
+  color:$blue1;
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 10px;
+  }
+
+  p {
+      font-size: 18px;
+      color: $gray1;
+      margin-bottom:5px;
+  }
+
+  h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+}
+
+
+
 .button-profile {
   text-align: center;
   padding: 5% 0;
 }
+
+.wrapper-opening {
+  padding: 200px;
+  background-color: $gray1;
+}
+
+.opening-logo-job {
+  width: 50%;
+  text-align: right;
+}
+
+.logo-size-details {
+  border-radius: 50%;
+  width:30%;
+  margin-right: 10%;
+}
+
+.openings-details-button {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
 
 @media screen and (max-width: 768px) {
 
@@ -76,5 +132,34 @@
     p {
     font-size: 12px;
     }
+  }
+
+  .openings-details-job {
+    width: 70%;
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    h4 {
+      font-size: 12px;
+    }
+    padding: 5% 0
+  }
+
+.opening-logo-job {
+    width: 30%;
+    padding: 5% 0
+  }
+
+  .logo-size-details {
+  width:70%;
   }
 }

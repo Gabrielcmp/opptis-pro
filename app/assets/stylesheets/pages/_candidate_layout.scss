@@ -1,0 +1,46 @@
+.candidate-text {
+  text-align: center;
+    h2 {
+      font-weight:500;
+      color: $blue1;
+      font-size: 30px;
+      padding: 0 10%;
+   }
+
+   p {
+    color: $gray1;
+    font-size: 18px;
+    padding: 0 10%;
+   }
+}
+
+.candidate-form{
+  text-align: center;
+}
+
+.candidate-news-1{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.candidate-new-2{
+  height: 700px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .candidate-text {
+    h2 {
+      font-size:20px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+}
+

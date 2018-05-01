@@ -1,44 +1,25 @@
 <p id="notice"><%= notice %></p>
+<div class="wrapper-opening">
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @opening.title %>
-</p>
+    <div class="opening-container">
+       <div class="opening-logo-job">
+        <%= image_tag("https://via.placeholder.com/250x250", class:'logo-size-details')%>
+      </div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @opening.type %>
-</p>
+      <div class="openings-details-job">
+        <h2><%= @opening.title %></h2>
+        <h3><%= @opening.type %></h3>
+        <p><%= @opening.beginning_date %></p>
+        <p><%= @opening.end_date %></p>
+        <p><%= @opening.pref_sex %></p>
+        <p><%= @opening.pref_age %></h2>
+        <p><%= @opening.previous_experience %></p>
+        <p><%= @opening.description %></p>
+      </div>
+    </div>
 
-<p>
-  <strong>Beginning date:</strong>
-  <%= @opening.beginning_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @opening.end_date %>
-</p>
-
-<p>
-  <strong>Pref sex:</strong>
-  <%= @opening.pref_sex %>
-</p>
-
-<p>
-  <strong>Pref age:</strong>
-  <%= @opening.pref_age %>
-</p>
-
-<p>
-  <strong>Previous experience:</strong>
-  <%= @opening.previous_experience %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @opening.description %>
-</p>
-
-<%= link_to 'Edit', edit_opening_path(@opening) %> |
-<%= link_to 'Back', openings_path %>
+<div class="openings-details-button">
+    <%= link_to 'Editar', edit_opening_path(@opening) %> |
+    <%= link_to 'Voltar', openings_path %>
+</div>

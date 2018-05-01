@@ -23,14 +23,7 @@
         <p>Caso o seu endereço não seja encontrado, indicar uma rua principal próxima. *Esta informação será usada para calcular quantos transportes serão necessários para chegar até o emprego</p>
       </div>
       <div class="candidate-form candidate-address">
-        <%= c.simple_fields_for :address do |address| %>
-          <%= address.input :street, label: false, hint: 'Rua, Logradouro, Avenida, etc' %>
-          <%= address.input :number, label: false, hint: 'Número' wrapper_html: {class: 'input-group col-sm-6'} %>
-          <%= address.input :complement, label: false, hint: 'Complemento' wrapper_html: {class: 'input-group col-sm-6'} %>
-          <%= address.input :neighborhood, label: false, hint: 'Bairro' %>
-          <%= address.input :Cidade, label: false, hint: 'Cidade' %>
-          <%= address.input :Estado, label: false, hint: 'Estado' %>
-        <%= end %>
+
         <%= link_to 'proximo', '#candidate-new-3', class: 'btn btn-primary'%>
         <%= link_to 'voltar', '#candidate-new-1' %>
       </div>
@@ -68,6 +61,6 @@
     </div>
 
 
-  <%= end %>
+  <% end %>
 
 </div>
