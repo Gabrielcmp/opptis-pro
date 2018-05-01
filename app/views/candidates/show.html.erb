@@ -1,39 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper-restaurant">
 
-<p>
-  <strong>Name:</strong>
-  <%= @candidate.name %>
+  <div class="candidato-logo">
+    <%= image_tag("https://via.placeholder.com/250x250", class:'logo-size')%>
+    <h1><%= @candidate.name %></h1>
+  </div>
+  <p id="notice"><%= notice %></p>
+
+  <div class="tab-container">
+    <div class="tab-selector">
+      <h2>Endereço</h2>
+    </div>
+
+    <div class="tab-selector">
+      <h2>Contato</h2>
+    </div>
+
+    <div class="tab-selector">
+      <h2>Experiência</h2>
+    </div>
+  </div>
+
+  <div class="profile-data">
+  <h3>Sexo:</h3>
+  <p><%= @candidate.sex %></p>
+
+  <h3>Telefone:</h3>
+  <p><%= @candidate.phone %>
+  </p>
+
+  <h3>Endereço:</h3>
+  <p><%= @candidate.address %>
 </p>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @candidate.sex %>
+  <h3>Endereço Formatado:</h3>
+  <p><%= @candidate.formatted_address %>
 </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @candidate.phone %>
+  <h3>Data de Nascimento:</h3>
+  <p><%= @candidate.birth_date %>
 </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @candidate.address %>
+  <h3>Experiência Prévia:</h3>
+  <p><%= @candidate.previous_experience %>
 </p>
 
-<p>
-  <strong>Formatted address:</strong>
-  <%= @candidate.formatted_address %>
-</p>
+  <div class="button-edit">
+  <%= link_to 'Editar', edit_candidate_path(@candidate), class:"btn btn-primary"%>
+  </div>
 
-<p>
-  <strong>Birth date:</strong>
-  <%= @candidate.birth_date %>
-</p>
+  <div class="button-edit">
+  <%= link_to 'Voltar', candidates_path, class:"btn btn-primary"%>
+  </div>
 
-<p>
-  <strong>Previous experience:</strong>
-  <%= @candidate.previous_experience %>
-</p>
-
-<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
-<%= link_to 'Back', candidates_path %>
+    <div class="button-search">
+    <%= link_to "Buscar Vagas", openings_path, class:"btn btn-primary"%>
+  </div>

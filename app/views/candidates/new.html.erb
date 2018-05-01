@@ -7,10 +7,13 @@
 
       <div class="candidate-text">
         <h2>Envie uma foto!</h2>
-        <p>Envie uma foto! Uma fotografia de qualidade pode aumentar suas chances de ser contratado. *De preferência use um fundo neutro e uma roupa social. :)</p>
+        <p>Envie uma foto! Uma fotografia de qualidade pode aumentar suas chances de ser contratado.</p>
+        <p>*De preferência use um fundo neutro e uma roupa social. :)</p>
+
+       <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
       </div>
+
       <div class="candidate-form">
-        <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
         <%= link_to 'proximo', '#candidate-new-2', class: 'btn btn-primary'%>
       </div>
 
@@ -20,11 +23,16 @@
 
       <div class="candidate-text">
         <h2>Qual é o seu endereço?</h2>
-        <p>Caso o seu endereço não seja encontrado, indicar uma rua principal próxima. *Esta informação será usada para calcular quantos transportes serão necessários para chegar até o emprego</p>
+        <p>Caso o seu endereço não seja encontrado, indicar uma rua principal próxima.</p>
+        <p>*Esta informação será usada para calcular quantos transportes serão necessários para chegar até o emprego.</p>
       </div>
+
       <div class="candidate-form candidate-address">
 
         <%= link_to 'proximo', '#candidate-new-3', class: 'btn btn-primary'%>
+        </div>
+
+      <div class="candidate-form candidate-address">
         <%= link_to 'voltar', '#candidate-new-1' %>
       </div>
 
@@ -40,24 +48,31 @@
       <div class="candidate-text">
         <h2>Qual é o seu número de telefone?</h2>
         <p>É por este número que o contratante entrará em contato</p>
-      </div>
       <%= c.input :phone, label: false %>
+       </div>
+       <div class="candidate-form">
+       <%= link_to 'proximo', '#candidate-new-4', class: 'btn btn-primary'%>
+      </div>
 
-      <%= link_to 'proximo', '#candidate-new-4', class: 'btn btn-primary'%>
+      <div class="candidate-form">
       <%= link_to 'voltar', '#candidate-new-2' %>
     </div>
 
     <div id="candidate-new-4">
 
+      <div class="candidate-text">
       <h2>Já trabalhou em restaurante?</h2>
       <%= c.input :restaurant_experience, as: :radio_buttons, label: false %>
 
       <h2>Conte-nos um pouco sobre suas experiências de trabalho</h2>
 
       <%= c.input :previous_experience, label: false %>
+      </div>
 
-      <%= c.button :submit, label: 'Enviar'%>
+      <div class="candidate-form">
+      <%= c.button :submit, label: 'Enviar', class: 'btn btn-primary'%>
       <%= link_to 'voltar', '#candidate-new-3' %>
+      </div>
     </div>
 
 
