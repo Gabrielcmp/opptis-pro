@@ -15,7 +15,14 @@
     </div>
 
     <div class="navbar-wagon-right hidden-xs hidden-sm">
-      <%= link_to "Registrar-se", "https://opptisapp.azurewebsites.net", class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %>
+      <% if user_signed_in? %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Sair") %>
+        <% end %>
+      <% else %>
+        <%= link_to "Registrar-se", new_user_registration_path , class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %>
+        <%= link_to "Entrar", new_user_session_path , class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %>
+      <% end %>
     </div>
 
     <!-- Dropdown appearing on mobile only -->
@@ -25,7 +32,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "Sou Candidato", institucional_candidato_path %></li>
           <li><%= link_to "Sou Restaurante", institucional_restaurante_path %></li>
-          <li><%= link_to "Registre-se", "https://opptisapp.azurewebsites.net" %></li>
+          <li><%= link_to "Registre-se", new_user_registration_path %></li>
         </ul>
       </div>
     </div>
