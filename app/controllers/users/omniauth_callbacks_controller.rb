@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: 'Facebook') if is_navigational_format?
     else
       session['devise.facebook_data'] = request.env['omniauth.auth']
-      flash[:alert] = "User not found, please register as a student or teacher"
+      flash[:alert] = "Usuário não encontrado. Por favor registre-se."
       redirect_to new_user_session_url
     end
   end

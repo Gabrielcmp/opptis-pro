@@ -8,13 +8,32 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:role, :name])
   end
 
-  def after_sign_up_path_for(resource_or_scope)
+  def after_sign_up_path_for(user)
     if current_user.role == 'restaurant'
-      restaurant_new
+      new_restaurant_path
     else
-      candidate_new
+      new_candidate_path
     end
   end
+
+  def after_sign_in_path_for(user)
+    if current_user.role == 'restaurant'
+      @restaurant = Restaurant.find_by(user: current_user)
+      if @restaurant
+        restaurant_path(@restaurant)
+      else
+        new_restaurant_path
+      end
+    else
+      @candidate = Candidate.find_by(user: current_user)
+      if @candidate
+        candidate_path(@candidate)
+      else
+        new_candidate_path
+      end
+    end
+  end
+
   def add_role_to_cookies
     if params[:role].present?
       session[:role] = params[:role]

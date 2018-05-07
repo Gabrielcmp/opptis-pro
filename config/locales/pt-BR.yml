@@ -1,0 +1,28 @@
+pt-BR:
+  activerecord:
+    models:
+      user: "Usuário"
+    attributes:
+      user:
+        user_name: "Nome do usuário"
+        user_email: "Email"
+        user_password: "Senha"
+        user_duplicate_email: ""
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "não pode ser nulo."
+            email:
+              blank: "não pode ser nulo."
+              invalid: "inválido!"
+              taken: "Esse e-mail já existe!"
+            duplicate_email:
+              blank: "não pode ser nulo."
+              taken: "Esse e-mail existe!"
+            password:
+              blank: "Não pode ser nula."
+              confirmation: "Deve possuir pelo menos 6 caracteres"
+            password_confirmation:
+              confirmation: "Senhas estão diferentes"

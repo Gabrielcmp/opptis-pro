@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :role, inclusion: { in: ["restaurant", "candidate"] }
   validates :email, :name, presence: true
 
+  has_one :restaurant
+  has_one :candidate
   def self.find_for_facebook_oauth(auth, role)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :name)
