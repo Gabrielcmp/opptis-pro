@@ -55,23 +55,27 @@
       </div>
 
       <div class="candidate-form">
-      <%= link_to 'voltar', '#candidate-new-2' %>
+        <%= link_to 'voltar', '#candidate-new-2' %>
+      </div>
+
     </div>
 
     <div id="candidate-new-4">
 
       <div class="candidate-text">
       <h2>Já trabalhou em restaurante?</h2>
-      <%= c.input :restaurant_experience, as: :radio_buttons, label: false %>
-
+        <%= c.collection_radio_buttons :restaurant_experience, [[true, "Sim"],[false, "Não"]], :first, :last, label: false %>
       <h2>Conte-nos um pouco sobre suas experiências de trabalho</h2>
 
       <%= c.input :previous_experience, label: false %>
       </div>
 
       <div class="candidate-form">
-      <%= c.button :submit, label: 'Enviar', class: 'btn btn-primary'%>
-      <%= link_to 'voltar', '#candidate-new-3' %>
+        <%= c.button :submit, 'Enviar', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="candidate-form">
+        <%= link_to 'voltar', '#candidate-new-2' %>
       </div>
     </div>
 
