@@ -16,22 +16,53 @@
 
 .candidate-form{
   text-align: center;
+  margin-top: 1%
 }
 
-.candidate-news-1{
+#candidate-new-1{
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#candidate-new-2{
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.candidate-new-2{
-  height: 700px;
+#candidate-new-3{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+#candidate-new-4{
+  height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.candidato-logo {
+  text-align: center;
+  background-color: $blue1;
+  padding: 10% 0;
+  h1 {
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
 
 @media screen and (max-width: 768px) {
+    .candidato-logo {
+    h1 {
+      font-size: 20px;
+     }
+    }
 
   .candidate-text {
     h2 {
