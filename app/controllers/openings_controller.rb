@@ -30,7 +30,7 @@ class OpeningsController < ApplicationController
   # POST /openings.json
   def create
     @opening = Opening.new(opening_params)
-
+    @opening.restaurant = current_user
     respond_to do |format|
       if @opening.save
         format.html { redirect_to @opening, notice: 'Opening was successfully created.' }
