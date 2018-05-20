@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-<div class="wrapper-opening">
-</div>
+
 
     <div class="opening-container">
        <div class="opening-logo-job">
@@ -22,7 +20,7 @@
       <div class="openings-details-button">
         <%= link_to 'Editar', edit_opening_path(@opening) %> |
         <%= link_to 'Voltar', openings_path %>
-        <%= render 'restaurant_applications' if @applications %>
+        <%= render 'restaurant_applications' if @applications.empty? %>
       </div>
     <% else %>
       <% if @opening.candidate == current_user.candidate %>

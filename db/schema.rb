@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 20180520163437) do
   create_table "applications", force: :cascade do |t|
     t.bigint "candidate_id"
     t.bigint "opening_id"
-    t.string "timestamps"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["candidate_id"], name: "index_applications_on_candidate_id"
     t.index ["opening_id"], name: "index_applications_on_opening_id"
   end
