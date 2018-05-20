@@ -53,6 +53,55 @@
   text-align: center;
 }
 
+.restaurant-text {
+  text-align: center;
+    h2 {
+      font-weight:500;
+      color: $blue1;
+      font-size: 30px;
+      padding: 0 10%;
+   }
+
+   p {
+    color: $gray1;
+    font-size: 18px;
+    padding: 0 10%;
+   }
+}
+
+.restaurant-form{
+  text-align: center;
+  margin-top: 1%
+}
+
+#restaurant-new-1{
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#restaurant-new-2{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#restaurant-new-3{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#restaurant-new-4{
+  height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
   .restaurante-logo {
     h1 {
@@ -60,11 +109,11 @@
      }
     }
 
-.logo-size {
+  .logo-size {
   width:30%;
-  }
+    }
 
-.tab-selector {
+  .tab-selector {
   h2 {
     font-size: 14px;
     }
@@ -80,13 +129,23 @@
     font-size: 14px;
     padding: 0 5%;
     }
-}
+  }
 
-.button-edit {
+  .button-edit {
   padding-bottom: 5%;
-}
+  }
 
-.button-search {
+  .button-search {
   padding: 3% 0;
-}
+  }
+
+  .restaurant-text {
+    h2 {
+      font-size:20px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
 }
