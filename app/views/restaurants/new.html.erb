@@ -7,84 +7,90 @@
 
       <div class="restaurant-text">
         <h2>Qual é o endereço do seu restaurante?</h2>
+        <%= c.input :name, label: false %>
       </div>
-      <%= c.input :name, label: false %>
+
 
       <div class="restaurant-text">
         <h2>Qual é o seu CNPJ?</h2>
-      <%= c.input :cnpj, label: false %>
-       </div>
+        <%= c.input :cnpj, label: false %>
+      </div>
 
       <div class="restaurant-text">
         <h2>Deseja inserir o seu logo?</h2>
         <p>A logomarca do restaurante ajuda a passar mais confiança na hora da contratação e ajuda o reconhecimento</p>
 
-       <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
+        <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
       </div>
 
-       <div class="restaurant-form">
+      <div class="restaurant-form">
        <%= link_to 'proximo', '#restaurant-new-2', class: 'btn btn-primary'%>
       </div>
+    </div>
 
-     </div>
 
-     <div id="restaurant-new-2">
+    <div id="restaurant-new-2">
 
       <div class="restaurant-text">
         <h2>Tipo de Cozinha</h2>
+        <%= c.input :cousine, label: false %>
       </div>
-      <%= c.input :cousine, label: false %>
+
 
       <div class="restaurant-text">
         <h2>Descrição do Restaurante</h2>
-      <%= c.input :cnpj, label: false %>
-       </div>
-
-       <div class="restaurant-form">
-       <%= link_to 'proximo', '#restaurant-new-3', class: 'btn btn-primary'%>
+        <%= c.input :cnpj, label: false %>
       </div>
 
-       <div class="restaurant-form">
-      <%= link_to 'voltar', '#restarant-new-1' %>
+      <div class="restaurant-form">
+        <%= link_to 'proximo', '#restaurant-new-3', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'voltar', '#restarant-new-1' %>
+      </div>
     </div>
+
 
     <div id="restaurant-new-3">
 
       <div class="restaurant-text">
         <h2>Nome do Responsável</h2>
         <p>Recomendamos que seja a pessoa responsável pela contratação de seus funcionários</p>
+        <%= c.input :cousine, label: false %>
       </div>
-      <%= c.input :cousine, label: false %>
 
       <div class="restaurant-text">
         <h2>Telefone Fixo do Restaurante</h2>
-      <%= c.input :phone, label: false %>
-       </div>
-
-       <div class="restaurant-text">
-        <h2>Telefone Celular do Responsável</h2>
-      <%= c.input :phone, label: false %>
-       </div>
-
-       <div class="restaurant-form">
-       <%= link_to 'proximo', '#restaurant-new-4', class: 'btn btn-primary'%>
+        <%= c.input :phone, label: false %>
       </div>
 
-       <div class="restaurant-form">
-      <%= link_to 'voltar', '#restarant-new-2' %>
+      <div class="restaurant-text">
+        <h2>Telefone Celular do Responsável</h2>
+        <%= c.input :phone, label: false %>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'proximo', '#restaurant-new-4', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'voltar', '#restarant-new-2' %>
+      </div>
     </div>
 
-     <div id="restaurant-new-4">
+
+    <div id="restaurant-new-4">
 
       <div class="restaurant-text">
         <h2>Endereço do Restaurante</h2>
         <p>*Esta informação será utilizada para calcular quantos transporte serão necessários para o candidato chegar no restaurante.</p>
+        <%= c.input :address, label: false %>
       </div>
-      <%= c.input :address, label: false %>
 
       <div class="restaurant-form">
-      <%= c.button :submit, label: 'Concluir', class: 'btn btn-primary'%>
-      <%= link_to 'voltar', '#restaurant-new-3' %>
+        <%= c.button :submit, label: 'Concluir', class: 'btn btn-primary'%>
+        <%= link_to 'voltar', '#restaurant-new-3' %>
       </div>
     </div>
 
