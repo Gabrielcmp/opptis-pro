@@ -1,4 +1,4 @@
-class Application < ApplicationRecord
+class Candidatura < ApplicationRecord
   belongs_to :opening
   belongs_to :candidate
 
