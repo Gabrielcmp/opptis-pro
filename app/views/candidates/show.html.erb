@@ -4,7 +4,6 @@
     <%= image_tag("https://via.placeholder.com/250x250", class:'logo-size')%>
     <h1><%= @candidate.name %></h1>
   </div>
-  <p id="notice"><%= notice %></p>
 
   <div class="tab-container">
     <div class="tab-selector">
@@ -21,37 +20,37 @@
   </div>
 
   <div class="profile-data">
-  <h3>Sexo:</h3>
-  <p><%= @candidate.sex %></p>
+    <h3>Sexo:</h3>
+    <p><%= @candidate.sex %></p>
 
-  <h3>Telefone:</h3>
-  <p><%= @candidate.phone %>
-  </p>
+    <h3>Telefone:</h3>
+    <p><%= @candidate.phone %></p>
 
-  <h3>Endereço:</h3>
-  <p><%= @candidate.address %>
-</p>
+    <h3>Endereço:</h3>
+    <p><%= @candidate.address %></p>
 
-  <h3>Endereço Formatado:</h3>
-  <p><%= @candidate.formatted_address %>
-</p>
+    <h3>Endereço Formatado:</h3>
+    <p><%= @candidate.formatted_address %></p>
 
-  <h3>Data de Nascimento:</h3>
-  <p><%= @candidate.birth_date %>
-</p>
+    <h3>Data de Nascimento:</h3>
+    <p><%= @candidate.birth_date %></p>
 
-  <h3>Experiência Prévia:</h3>
-  <p><%= @candidate.previous_experience %>
-</p>
+    <h3>Experiência Prévia:</h3>
+    <p><%= @candidate.previous_experience %></p>
 
-  <div class="button-edit">
-  <%= link_to 'Editar', edit_candidate_path(@candidate), class:"btn btn-primary"%>
   </div>
 
   <div class="button-edit">
-  <%= link_to 'Voltar', candidates_path, class:"btn btn-primary"%>
+    <%= link_to 'Voltar', candidates_path, class:"btn btn-primary"%>
   </div>
+
+  <% if current_user.candidate == @candidate %>
+    <div class="button-edit">
+    <%= link_to 'Editar', edit_candidate_path(@candidate), class:"btn btn-primary"%>
+    </div>
 
     <div class="button-search">
     <%= link_to "Buscar Vagas", openings_path, class:"btn btn-primary"%>
-  </div>
+    </div>
+  <% end %>
+</div>

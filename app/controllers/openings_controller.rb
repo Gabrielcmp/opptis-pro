@@ -4,12 +4,17 @@ class OpeningsController < ApplicationController
   # GET /openings
   # GET /openings.json
   def index
-    @openings = Opening.all
+    if current_user.role == 'restaurant'
+      @openings = Opening.where(restaurant: current_user.restaurant)
+    else
+      @openings = Opening.all
+    end
   end
 
   # GET /openings/1
   # GET /openings/1.json
   def show
+    @applications = Application.where(opening: @opening)
   end
 
   # GET /openings/new

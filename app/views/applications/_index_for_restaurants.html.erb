@@ -1,0 +1,5 @@
+<h3>Lista de candidatos</h3>
+
+<% @applications.each do |application| %>
+  <%= link_to application.candidate.name, candidate_path(application.candidate) %>
+<% end %>

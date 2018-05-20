@@ -10,16 +10,25 @@
       <div class="openings-details-job">
         <h2><%= @opening.title %></h2>
         <h3><%= @opening.type %></h3>
-        <p><%= @opening.beginning_date %></p>
-        <p><%= @opening.end_date %></p>
-        <p><%= @opening.pref_sex %></p>
-        <p><%= @opening.pref_age %></h2>
-        <p><%= @opening.previous_experience %></p>
-        <p><%= @opening.description %></p>
+        <p> <%= @opening.beginning_date %></p>
+        <p> <%= @opening.end_date %></p>
+        <p> <%= @opening.pref_sex %></p>
+        <p> <%= @opening.pref_age %></h2>
+        <p> <%= @opening.previous_experience %></p>
+        <p> <%= @opening.description %></p>
       </div>
     </div>
-
-<div class="openings-details-button">
-    <%= link_to 'Editar', edit_opening_path(@opening) %> |
-    <%= link_to 'Voltar', openings_path %>
-</div>
+    <% if current_user.role == 'restaurant' %>
+      <div class="openings-details-button">
+        <%= link_to 'Editar', edit_opening_path(@opening) %> |
+        <%= link_to 'Voltar', openings_path %>
+        <%= render 'restaurant_applications' if @applications %>
+      </div>
+    <% else %>
+      <% if @opening.candidate == current_user.candidate %>
+        <%= link_to 'Cancelar candidatura', applications_delete_path(opening_id: @opening.id),
+        method: :delete, class: "btn btn-primary", data: { confirm: 'Tem certeza que deseja remover a candidatura?' } %>
+      <% else %>
+        <%= link_to 'Cadastre-se', applications_create_path(opening_id: @opening.id), method: :post, class: "btn btn-primary" %>
+      <% end %>
+    <% end %>

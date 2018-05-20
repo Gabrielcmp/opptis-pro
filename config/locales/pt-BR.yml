@@ -2,6 +2,7 @@ pt-BR:
   activerecord:
     models:
       user: "Usuário"
+      candidate: 'Candidato'
     attributes:
       user:
         user_name: "Nome do usuário"
@@ -26,3 +27,6 @@ pt-BR:
               confirmation: "Deve possuir pelo menos 6 caracteres"
             password_confirmation:
               confirmation: "Senhas estão diferentes"
+        candidate:
+          attributes:
+            user: 'não pode ser nulo.'

@@ -25,7 +25,7 @@ class CandidatesController < ApplicationController
   # POST /candidates.json
   def create
     @candidate = Candidate.new(candidate_params)
-
+    @candidate.user = current_user
     respond_to do |format|
       if @candidate.save
         format.html { redirect_to @candidate, notice: 'Candidate was successfully created.' }
@@ -69,6 +69,7 @@ class CandidatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidate_params
-      params.require(:candidate).permit(:name, :sex, :phone, :address, :formatted_address, :birth_date, :previous_experience)
+      params.require(:candidate).permit(:name, :sex, :phone, :address,
+        :formatted_address, :birth_date, :previous_experience, :cpf, :restaurant_experience)
     end
 end

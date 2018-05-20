@@ -9,12 +9,13 @@
         <p><%= opening.pref_sex %></p>
         <p><%= opening.pref_age %></p>
         <h4> <%= link_to 'Detalhes da vaga', opening %> </h4>
-        <h4> <%= link_to 'Ver candidaturas', opening %> </h4>
       </div>
-      <div class="opening-actions">
-        <p><%= link_to 'Editar', edit_opening_path(opening) %></p>
-        <p><%= link_to 'Remover', opening, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
+      <% if current_user.role == 'restaurant' %>
+        <div class="opening-actions">
+          <p><%= link_to 'Editar', edit_opening_path(opening) %></p>
+          <p><%= link_to 'Remover', opening, method: :delete, data: { confirm: 'Tem certeza que quer remover a vaga?' } %></p>
+        </div>
+      <% end %>
     </div>
     <hr>
 
