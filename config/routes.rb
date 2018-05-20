@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :openings
   resources :restaurants
   resources :candidates
-  resources :applications, only: [:create, :destroy]
+  resources :candidaturas, only: [:create, :destroy]
 
   #Institucional
   get 'institucional_candidato', to: 'pages#candidato'

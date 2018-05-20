@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180520163437) do
+ActiveRecord::Schema.define(version: 20180520221520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "applications", force: :cascade do |t|
-    t.bigint "candidate_id"
-    t.bigint "opening_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["candidate_id"], name: "index_applications_on_candidate_id"
-    t.index ["opening_id"], name: "index_applications_on_opening_id"
-  end
 
   create_table "candidates", force: :cascade do |t|
     t.string "name"
@@ -38,6 +29,14 @@ ActiveRecord::Schema.define(version: 20180520163437) do
     t.boolean "restaurant_experience"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_candidates_on_user_id", unique: true
+  end
+
+  create_table "candidaturas", force: :cascade do |t|
+    t.bigint "candidate_id"
+    t.bigint "opening_id"
+    t.string "timestamps"
+    t.index ["candidate_id"], name: "index_candidaturas_on_candidate_id"
+    t.index ["opening_id"], name: "index_candidaturas_on_opening_id"
   end
 
   create_table "openings", force: :cascade do |t|
@@ -93,9 +92,9 @@ ActiveRecord::Schema.define(version: 20180520163437) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "applications", "candidates"
-  add_foreign_key "applications", "openings"
   add_foreign_key "candidates", "users"
+  add_foreign_key "candidaturas", "candidates"
+  add_foreign_key "candidaturas", "openings"
   add_foreign_key "openings", "restaurants"
   add_foreign_key "restaurants", "users"
 end

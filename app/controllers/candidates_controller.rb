@@ -12,7 +12,7 @@ class CandidatesController < ApplicationController
   def show
   end
 
-  # GET /candidates/new
+  # GET /candidates/newr
   def new
     @candidate = Candidate.new
   end

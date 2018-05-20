@@ -1,16 +1,16 @@
-class ApplicationsController < ApplicationController
+class CandidaturaController < ApplicationController
   before_action :set_opening_id
 
   def create
-    Application.create(candidate: current_user.candidate, opening_id: @opening_id)
+    Candidatura.create(candidate: current_user.candidate, opening_id: @opening_id)
     respond_to do |format|
       format.html { redirect_to openings_path(@opening_id), notice: 'Candidatura efetuada com sucesso' }
     end
   end
 
   def destroy
-    @application = Application.find_by(@opening_id)
-    @application.destroy
+    @candidatura = Candidatura.find_by(@opening_id)
+    @candidatura.destroy
     respond_to do |format|
       format.html { redirect_to openings_path(@opening_id), notice: 'Candidatura removida com sucesso' }
     end
