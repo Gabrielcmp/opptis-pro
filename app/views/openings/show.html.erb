@@ -25,7 +25,7 @@
     <% else %>
     <div class="opening-btn">
       <% if current_user.role = 'candidate' && !@candidatura.nil? && @candidatura.candidate == current_user.candidate %>
-        <%= link_to 'Cancelar candidatura', candidaturas_path(opening_id: @opening.id),
+        <%= link_to 'Cancelar candidatura', candidatura_path(@candidatura),
         method: :delete, class: "btn btn-primary", data: { confirm: 'Tem certeza que deseja remover a candidatura?' } %>
       <% else %>
         <%= link_to 'Candidate-se', candidaturas_path(opening_id: @opening.id), method: :post, class: "btn btn-primary" %>

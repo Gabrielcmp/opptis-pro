@@ -5,37 +5,74 @@
     <h1> <%= @restaurant.name%></h1>
   </div>
 
+  <div data-tabs>
 
-  <div class="tab-container">
-    <div class="tab-selector">
-      <h2>Dados do Restaurante</h2>
+    <div class="tab-container">
+
+      <div data-tabs-item="1" data-tabs-active class="tab-selector">
+        <h2>Dados do Restaurante</h2>
+      </div>
+      <% if @restaurant == current_user.restaurant %>
+        <div data-tabs-item="2" class="tab-selector">
+          <h2>Dados de Contato</h2>
+        </div>
+      <% end %>
+
     </div>
 
-    <div class="tab-selector">
-      <h2>Dados de Contato</h2>
-    </div>
+    <div data-tabs-content="1" data-tabs-active><%= render 'data' %></div>
+
+    <% if @restaurant == current_user.restaurant %>
+      <div data-tabs-content="2"><%= render 'contact' %></div>
+
+
+      <div class="button-edit">
+        <%= link_to "Editar", edit_restaurant_path, class:"btn btn-primary"%>
+      </div>
+      <div class="button-search">
+        <%= link_to "Buscar Candidatos", openings_path, class:"btn btn-primary"%>
+      </div>
+
+      <%= content_for(:after_js) do %>
+        <script>
+          debugger
+          const MyTabs = (function(){
+
+            const showTab = function showTab (item, module) {
+              const activeItems = [].slice.call(module.querySelectorAll('[data-tabs-active]'));
+              activeItems.forEach(item => { item.removeAttribute('data-tabs-active') })
+              item.setAttribute('data-tabs-active', '');
+              module.querySelector(`[data-tabs-content="${item.getAttribute('data-tabs-item')}"]`).setAttribute('data-tabs-active', '');
+            }
+
+            const initModule = function initModule (module) {
+              const barItems = [].slice.call(module.querySelectorAll('[data-tabs-item]'));
+              barItems.forEach(item => {
+                item.addEventListener('click', function(){
+                  if(this.getAttribute('data-tabs-active') !== null) {
+                    return;
+                  }
+                  showTab(item, module);
+                })
+              })
+            }
+
+            const init = function init () {
+              const modules = [].slice.call(document.querySelectorAll('[data-tabs]'));
+              if(modules.length === 0) {
+                return;
+              }
+              modules.forEach(module => { initModule(module); });
+            }
+
+            return {
+              init
+            }
+
+        }());
+        </script>
+      <% end %>
+    <% end %>
+
   </div>
-
-
-  <div>
-    <div class="profile-data">
-      <h3>Descrição</h3>
-      <p><%= @restaurant.description%></p>
-
-      <h3>CNPJ</h3>
-      <p><%= @restaurant.cnpj%></p>
-
-      <h3>Endereço</h3>
-      <p><%= @restaurant.formatted_address%></p>
-    </div>
-
-    <div class="button-edit">
-      <%= link_to "Editar", edit_restaurant_path, class:"btn btn-primary"%>
-    </div>
-  </dib>
-
-  <div class="button-search">
-    <%= link_to "Buscar Candidatos", openings_path, class:"btn btn-primary"%>
-  </div>
-
 </div>
