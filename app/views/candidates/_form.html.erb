@@ -1,42 +1,80 @@
-<%= form_with(model: candidate, local: true) do |form| %>
+<%= simple_form_for @candidate do |c| %>
+
+    <div id="candidate-new-1">
+
+      <div class="candidate-text">
+        <h2>Envie uma foto!</h2>
+        <p>Envie uma foto! Uma fotografia de qualidade pode aumentar suas chances de ser contratado.</p>
+        <p>*De preferência use um fundo neutro e uma roupa social. :)</p>
+
+       <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
+      </div>
+
+      <div class="candidate-form">
+        <%= link_to 'proximo', '#candidate-new-2', class: 'btn btn-primary'%>
+      </div>
+
+    </div>
+
+    <div id="candidate-new-2">
+
+      <div class="candidate-text">
+        <h2>Qual é o seu endereço?</h2>
+        <p>Caso o seu endereço não seja encontrado, indicar uma rua principal próxima.</p>
+        <p>*Esta informação será usada para calcular quantos transportes serão necessários para chegar até o emprego.</p>
+      </div>
+
+      <div class="candidate-form candidate-address">
+
+        <%= link_to 'proximo', '#candidate-new-3', class: 'btn btn-primary'%>
+        </div>
+
+      <div class="candidate-form candidate-address">
+        <%= link_to 'voltar', '#candidate-new-1' %>
+      </div>
+
+    </div>
+
+    <div id="candidate-new-3">
+
+      <div class="candidate-text">
+        <h2>Qual é o seu CPF?</h2>
+        <p>Enviaremos um email de confirmação</p>
+      </div>
+      <%= c.input :cpf, label: false %>
+      <div class="candidate-text">
+        <h2>Qual é o seu número de telefone?</h2>
+        <p>É por este número que o contratante entrará em contato</p>
+      <%= c.input :phone, label: false %>
+       </div>
+       <div class="candidate-form">
+       <%= link_to 'proximo', '#candidate-new-4', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="candidate-form">
+        <%= link_to 'voltar', '#candidate-new-2' %>
+      </div>
+
+    </div>
+
+    <div id="candidate-new-4">
+
+      <div class="candidate-text">
+        <h2>Já trabalhou em restaurante?</h2>
+        <%= c.collection_radio_buttons :restaurant_experience, [[true, "Sim"],[false, "Não"]], :first, :last, label: false %>
+        <h2>Conte-nos um pouco sobre suas experiências de trabalho</h2>
+        <p> Ex: Restaurante XYZ de Janeiro de 2015 - Maio de 2018</p>
+          <%= c.input :previous_experience, label: false %>
+      </div>
+
+      <div class="candidate-form">
+        <%= c.button :submit, 'Enviar', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="candidate-form">
+        <%= link_to 'voltar', '#candidate-new-2' %>
+      </div>
+    </div>
 
 
-  <div class="field">
-   <h2><%= form.label :name %></h2>
-    <p><%= form.text_field :name, id: :candidate_name %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :sex %></h2>
-    <p><%= form.text_field :sex, id: :candidate_sex %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :phone %></h2>
-    <p><%= form.text_field :phone, id: :candidate_phone %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :address %></h2>
-    <p><%= form.text_field :address, id: :candidate_address %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :formatted_address %></h2>
-    <p><%= form.text_field :formatted_address, id: :candidate_formatted_address %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :birth_date %></h2>
-    <p><%= form.text_field :birth_date, id: :candidate_birth_date %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :previous_experience %></h2>
-    <p><%= form.text_area :previous_experience, id: :candidate_previous_experience %></p>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <% end %>

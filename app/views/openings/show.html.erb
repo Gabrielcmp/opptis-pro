@@ -23,10 +23,12 @@
         <%= render 'restaurant_candidaturas' if @candidaturas.empty? %>
       </div>
     <% else %>
-      <% if current_user.role = 'candidate' && @candidatura.candidate == current_user.candidate %>
+    <div class="opening-btn">
+      <% if current_user.role = 'candidate' && !@candidatura.nil? && @candidatura.candidate == current_user.candidate %>
         <%= link_to 'Cancelar candidatura', candidaturas_path(opening_id: @opening.id),
         method: :delete, class: "btn btn-primary", data: { confirm: 'Tem certeza que deseja remover a candidatura?' } %>
       <% else %>
-        <%= link_to 'Cadastre-se', candidaturas_create_path(opening_id: @opening.id), method: :post, class: "btn btn-primary" %>
+        <%= link_to 'Candidate-se', candidaturas_path(opening_id: @opening.id), method: :post, class: "btn btn-primary" %>
       <% end %>
+    </div>
     <% end %>

@@ -1,47 +1,92 @@
-<%= form_with(model: restaurant, local: true) do |form| %>
-  <% if restaurant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+  <%= simple_form_for @restaurant do |c| %>
 
-      <ul>
-      <% restaurant.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div id="restaurant-new-1">
+
+      <div class="restaurant-text">
+        <h2>Qual é o endereço do seu restaurante?</h2>
+        <%= c.input :name, label: false %>
+      </div>
+
+
+      <div class="restaurant-text">
+        <h2>Qual é o seu CNPJ?</h2>
+        <%= c.input :cnpj, label: false %>
+      </div>
+
+      <div class="restaurant-text">
+        <h2>Deseja inserir o seu logo?</h2>
+        <p>A logomarca do restaurante ajuda a passar mais confiança na hora da contratação e ajuda o reconhecimento</p>
+
+        <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
+      </div>
+
+      <div class="restaurant-form">
+       <%= link_to 'proximo', '#restaurant-new-2', class: 'btn btn-primary'%>
+      </div>
     </div>
+
+
+    <div id="restaurant-new-2">
+
+      <div class="restaurant-text">
+        <h2>Tipo de Cozinha</h2>
+        <%= c.input :cousine, label: false %>
+      </div>
+
+
+      <div class="restaurant-text">
+        <h2>Descrição do Restaurante</h2>
+        <%= c.input :description, label: false %>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'proximo', '#restaurant-new-3', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'voltar', '#restarant-new-1' %>
+      </div>
+    </div>
+
+
+    <div id="restaurant-new-3">
+
+      <div class="restaurant-text">
+        <h2>Nome do Responsável</h2>
+        <p>Recomendamos que seja a pessoa responsável pela contratação de seus funcionários</p>
+        <%= c.input :cousine, label: false %>
+      </div>
+
+      <div class="restaurant-text">
+        <h2>Telefone Celular do Responsável</h2>
+        <p>Este telefone não será divulgado para os candidatos.</p>
+        <%= c.input :phone, label: false %>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'proximo', '#restaurant-new-4', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'voltar', '#restarant-new-2' %>
+      </div>
+    </div>
+
+
+    <div id="restaurant-new-4">
+
+      <div class="restaurant-text">
+        <h2>Endereço do Restaurante</h2>
+        <p>*Esta informação será utilizada para calcular quantos transporte serão necessários para o candidato chegar no restaurante.</p>
+        <%= c.input :address, label: false %>
+      </div>
+
+      <div class="restaurant-form">
+        <%= c.button :submit, label: 'Concluir', class: 'btn btn-primary'%>
+        <%= link_to 'voltar', '#restaurant-new-3' %>
+      </div>
+
+    </div>
+
+
   <% end %>
-
-  <div class="field">
-    <h2><%= form.label :name %></h2>
-    <p><%= form.text_field :name, id: :restaurant_name %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :cnpj %></h2>
-    <p><%= form.text_field :cnpj, id: :restaurant_cnpj %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :cousine %></h2>
-    <p><%= form.text_field :cousine, id: :restaurant_cousine %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :phone %></h2>
-    <p><%= form.text_field :phone, id: :restaurant_phone %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :address %></h2>
-    <p><%= form.text_field :address, id: :restaurant_address %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :formatted_address %></h2>
-    <p><%= form.text_field :formatted_address, id: :restaurant_formatted_address %></p>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
