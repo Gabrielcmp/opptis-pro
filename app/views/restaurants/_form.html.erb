@@ -3,7 +3,7 @@
     <div id="restaurant-new-1">
 
       <div class="restaurant-text">
-        <h2>Qual é o endereço do seu restaurante?</h2>
+        <h2>Qual é o nome do seu restaurante?</h2>
         <%= c.input :name, label: false %>
       </div>
 
@@ -14,16 +14,15 @@
       </div>
 
       <div class="restaurant-text">
-        <h2>Deseja substituir o seu logo?</h2>
+        <h2>Deseja inserir o seu logo?</h2>
         <p>A logomarca do restaurante ajuda a passar mais confiança na hora da contratação e ajuda o reconhecimento</p>
-        <%= cl_image_tag @restaurant.photo, height: 250, width: 250, crop: :fill, class: 'restaurant-logo' %>
 
-       <%= c.input :photo, label: false %>
-       <%= c.input :photo_cache, as: :hidden %>
+        <%= c.input :photo, label: false %>
+        <%= c.input :photo_cache, as: :hidden %>
       </div>
 
       <div class="restaurant-form">
-       <%= link_to 'proximo', '#restaurant-new-2', class: 'btn btn-primary'%>
+       <%= link_to 'Próximo', '#restaurant-new-2', class: 'btn btn-primary'%>
       </div>
     </div>
 
@@ -38,15 +37,15 @@
 
       <div class="restaurant-text">
         <h2>Descrição do Restaurante</h2>
-        <%= c.input :description, label: false %>
+        <%= c.input :description, label: false, as: :text %>
       </div>
 
       <div class="restaurant-form">
-        <%= link_to 'proximo', '#restaurant-new-3', class: 'btn btn-primary'%>
+        <%= link_to 'Próximo', '#restaurant-new-3', class: 'btn btn-primary'%>
       </div>
 
       <div class="restaurant-form">
-        <%= link_to 'voltar', '#restarant-new-1' %>
+        <%= link_to 'Voltar', '#restarant-new-1' %>
       </div>
     </div>
 
@@ -56,21 +55,25 @@
       <div class="restaurant-text">
         <h2>Nome do Responsável</h2>
         <p>Recomendamos que seja a pessoa responsável pela contratação de seus funcionários</p>
-        <%= c.input :cousine, label: false %>
+        <%= c.input :manager_name, label: false %>
+      </div>
+
+      <div class="restaurant-text">
+        <h2>Telefone Fixo do Restaurante</h2>
+        <%= c.input :phone, label: false %>
       </div>
 
       <div class="restaurant-text">
         <h2>Telefone Celular do Responsável</h2>
-        <p>Este telefone não será divulgado para os candidatos.</p>
-        <%= c.input :phone, label: false %>
+        <%= c.input :manager_phone, label: false %>
       </div>
 
       <div class="restaurant-form">
-        <%= link_to 'proximo', '#restaurant-new-4', class: 'btn btn-primary'%>
+        <%= link_to 'Próximo', '#restaurant-new-4', class: 'btn btn-primary'%>
       </div>
 
       <div class="restaurant-form">
-        <%= link_to 'voltar', '#restarant-new-2' %>
+        <%= link_to 'Voltar', '#restarant-new-2' %>
       </div>
     </div>
 
@@ -84,8 +87,11 @@
       </div>
 
       <div class="restaurant-form">
-        <%= c.button :submit, label: 'Concluir', class: 'btn btn-primary'%>
-        <%= link_to 'voltar', '#restaurant-new-3' %>
+        <%= c.button :submit, "Concluir", class: 'btn btn-primary'%>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'Voltar', '#restaurant-new-3' %>
       </div>
 
     </div>
