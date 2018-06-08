@@ -20,7 +20,8 @@
         <h2>Deseja inserir o seu logo?</h2>
         <p>A logomarca do restaurante ajuda a passar mais confiança na hora da contratação e ajuda o reconhecimento</p>
 
-        <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
+        <%= c.input :photo, label: false %>
+        <%= c.input :photo_cache, as: :hidden %>
       </div>
 
       <div class="restaurant-form">
@@ -91,6 +92,7 @@
       <div class="restaurant-form">
         <%= c.button :submit, label: 'Concluir', class: 'btn btn-primary'%>
         <%= link_to 'voltar', '#restaurant-new-3' %>
+        <%= link_to 'cancelar', restaurant_path(@restaurant) %>
       </div>
 
     </div>
