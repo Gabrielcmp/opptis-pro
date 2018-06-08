@@ -8,3 +8,27 @@
   text-align: center;
   padding: 5% 0 0;
   }
+
+.registration {
+  padding: 0 30% 5%;
+  }
+
+.layout-body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper-registration{
+  padding: 0 30%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .registration {
+    text-align: center;
+    padding: 0 10% 10%;
+  }
+}
