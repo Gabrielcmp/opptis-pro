@@ -1,7 +1,7 @@
 <div class="wrapper-restaurant">
 
   <div class="restaurante-logo">
-    <%= image_tag("https://via.placeholder.com/250x250", class:'logo-size')%>
+    <%= cl_image_tag @restaurant.photo, height: 250, width: 250, crop: :fill, class: 'logo-size' %>
     <h1> <%= @restaurant.name%></h1>
   </div>
 
@@ -33,9 +33,9 @@
         <%= link_to "Buscar Candidatos", openings_path, class:"btn btn-primary"%>
       </div>
 
+    <% end %>
       <%= content_for(:after_js) do %>
         <script>
-          debugger
           const MyTabs = (function(){
 
             const showTab = function showTab (item, module) {
@@ -70,9 +70,9 @@
             }
 
         }());
+          MyTabs.init();
         </script>
       <% end %>
-    <% end %>
 
   </div>
 </div>

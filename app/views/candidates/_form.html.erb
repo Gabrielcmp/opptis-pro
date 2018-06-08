@@ -4,10 +4,11 @@
 
       <div class="candidate-text">
         <h2>Envie uma foto!</h2>
-        <p>Envie uma foto! Uma fotografia de qualidade pode aumentar suas chances de ser contratado.</p>
+        <p> Uma fotografia de qualidade pode aumentar suas chances de ser contratado.</p>
+        <%= cl_image_tag @candidate.photo, height: 250, width: 250, crop: :fill, class: 'candidate-logo' %>
         <p>*De preferência use um fundo neutro e uma roupa social. :)</p>
-
-       <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
+        <%= c.input :photo, label: false %>
+        <%= c.input :photo_cache, as: :hidden %>
       </div>
 
       <div class="candidate-form">
@@ -73,6 +74,7 @@
 
       <div class="candidate-form">
         <%= link_to 'voltar', '#candidate-new-2' %>
+        <%= link_to 'cancelar', candidate_path(@candidate) %>
       </div>
     </div>
 

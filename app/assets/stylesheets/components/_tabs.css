@@ -4,3 +4,13 @@
 [data-tabs] [data-tabs-content][data-tabs-active] {
   display: block;
 }
+
+[data-tabs-item] {
+  background-color: #f2f3f4;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+
+[data-tabs-active] {
+  background-color: white;
+}
