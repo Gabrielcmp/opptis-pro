@@ -1,26 +1,32 @@
+<div class="wrapper-registration">
+
 <div class="login-image">
-  <%=%>
+  <%= image_tag("Opptis_Banner_Login_50.png") %>
   <h2>Registre-se</h2>
 </div>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Registre-se pelo #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "btn loginBtn loginBtn--facebook" %><br />
+<div class="registration">
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to "Registre-se pelo #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "btn loginBtn loginBtn--facebook" %><br />
+    <% end -%>
   <% end -%>
-<% end -%>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name, required: true, autofocus: true, label: "Nome completo" %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, label: "Senha", hint: ("Mínimo de #{@minimum_password_length} caracteres" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true, label: "Repita sua senha" %>
-    <%= f.collection_radio_buttons :role, [["restaurant", "Restaurante"],["candidate", "Candidato"]], :first, :last, required: true %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name, required: true, autofocus: true, label: "Nome completo" %>
+      <%= f.input :email, required: true, autofocus: true %>
+      <%= f.input :password, required: true, label: "Senha", hint: ("Mínimo de #{@minimum_password_length} caracteres" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, required: true, label: "Repita sua senha" %>
+      <%= f.collection_radio_buttons :role, [["restaurant", "Restaurante"],["candidate", "Candidato"]], :first, :last, required: true, class: "radio-group" %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Registre-se" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+    <%= f.button :submit, "Registre-se", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+</div>
