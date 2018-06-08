@@ -14,10 +14,12 @@
       </div>
 
       <div class="restaurant-text">
-        <h2>Deseja inserir o seu logo?</h2>
+        <h2>Deseja substituir o seu logo?</h2>
         <p>A logomarca do restaurante ajuda a passar mais confiança na hora da contratação e ajuda o reconhecimento</p>
+        <%= cl_image_tag @restaurant.photo, height: 250, width: 250, crop: :fill, class: 'restaurant-logo' %>
 
-        <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
+       <%= c.input :photo, label: false %>
+       <%= c.input :photo_cache, as: :hidden %>
       </div>
 
       <div class="restaurant-form">

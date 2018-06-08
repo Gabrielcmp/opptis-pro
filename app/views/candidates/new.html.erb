@@ -10,7 +10,8 @@
         <p>Envie uma foto! Uma fotografia de qualidade pode aumentar suas chances de ser contratado.</p>
         <p>*De preferência use um fundo neutro e uma roupa social. :)</p>
 
-       <%= link_to 'substituir cloudinary', '#', class: 'btn btn-primary disabled' %>
+       <%= c.input :photo, label: false %>
+       <%= c.input :photo_cache, as: :hidden %>
       </div>
 
       <div class="candidate-form">

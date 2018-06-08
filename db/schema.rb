@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180520221520) do
+ActiveRecord::Schema.define(version: 20180608131730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 20180520221520) do
     t.string "cpf"
     t.boolean "restaurant_experience"
     t.bigint "user_id"
+    t.string "photo"
     t.index ["user_id"], name: "index_candidates_on_user_id", unique: true
   end
 
   create_table "candidaturas", force: :cascade do |t|
     t.bigint "candidate_id"
     t.bigint "opening_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "timestamps"
     t.index ["candidate_id"], name: "index_candidaturas_on_candidate_id"
     t.index ["opening_id"], name: "index_candidaturas_on_opening_id"
   end
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20180520221520) do
     t.datetime "updated_at", null: false
     t.text "description"
     t.bigint "user_id"
+    t.string "photo"
     t.index ["user_id"], name: "index_restaurants_on_user_id", unique: true
   end
 
