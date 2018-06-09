@@ -51,3 +51,105 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+  <%= simple_form_for @opening do |c| %>
+
+    <div id="restaurant-new-1">
+
+      <div class="restaurant-text">
+        <h2>Qual é a vaga?</h2>
+        <%= c.input :title, label: false %>
+      </div>
+
+
+      <div class="restaurant-text">
+        <h2>Qual é o seu CNPJ?</h2>
+        <%= c.input :cnpj, label: false %>
+      </div>
+
+      <div class="restaurant-text">
+        <h2>Deseja inserir o seu logo?</h2>
+        <p>A logomarca do restaurante ajuda a passar mais confiança na hora da contratação e ajuda o reconhecimento</p>
+
+        <%= c.input :photo, label: false %>
+        <%= c.input :photo_cache, as: :hidden %>
+      </div>
+
+      <div class="restaurant-form">
+       <%= link_to 'Próximo', '#restaurant-new-2', class: 'btn btn-primary'%>
+      </div>
+    </div>
+
+
+    <div id="restaurant-new-2">
+
+      <div class="restaurant-text">
+        <h2>Tipo de Cozinha</h2>
+        <%= c.input :cousine, label: false %>
+      </div>
+
+
+      <div class="restaurant-text">
+        <h2>Descrição do Restaurante</h2>
+        <%= c.input :description, label: false, as: :text %>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'Próximo', '#restaurant-new-3', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'Voltar', '#restarant-new-1' %>
+      </div>
+    </div>
+
+
+    <div id="restaurant-new-3">
+
+      <div class="restaurant-text">
+        <h2>Nome do Responsável</h2>
+        <p>Recomendamos que seja a pessoa responsável pela contratação de seus funcionários</p>
+        <%= c.input :manager_name, label: false %>
+      </div>
+
+      <div class="restaurant-text">
+        <h2>Telefone Fixo do Restaurante</h2>
+        <%= c.input :phone, label: false %>
+      </div>
+
+      <div class="restaurant-text">
+        <h2>Telefone Celular do Responsável</h2>
+        <%= c.input :manager_phone, label: false %>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'Próximo', '#restaurant-new-4', class: 'btn btn-primary'%>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'Voltar', '#restarant-new-2' %>
+      </div>
+    </div>
+
+
+    <div id="restaurant-new-4">
+
+      <div class="restaurant-text">
+        <h2>Endereço do Restaurante</h2>
+        <p>*Esta informação será utilizada para calcular quantos transporte serão necessários para o candidato chegar no restaurante.</p>
+        <%= c.input :address, label: false %>
+      </div>
+
+      <div class="restaurant-form">
+        <%= c.button :submit, "Concluir", class: 'btn btn-primary'%>
+      </div>
+
+      <div class="restaurant-form">
+        <%= link_to 'Voltar', '#restaurant-new-3' %>
+      </div>
+
+    </div>
+
+
+  <% end %>

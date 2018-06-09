@@ -2,7 +2,7 @@
 
     <div class="opening-container">
        <div class="opening-logo-job">
-        <%= image_tag("https://via.placeholder.com/250x250", class:'logo-size-details')%>
+        <%= cl_image_tag(@opening.restaurant.photo, class:'logo-size-details', height: 250, width: 250, crop: :fill)%>
       </div>
 
       <div class="openings-details-job">

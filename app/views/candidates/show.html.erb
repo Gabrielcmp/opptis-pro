@@ -1,7 +1,7 @@
 <div class="wrapper-restaurant">
 
   <div class="candidato-logo">
-    <%= cl_image_tag @candidate.photo, height: 250, width: 250, crop: :fill, class: 'candidate-logo' %>
+    <%= cl_image_tag @candidate.photo, height: 250, width: 250, crop: :fill, class: 'logo-size' %>
     <h1><%= @candidate.name %></h1>
   </div>
   <div data-tabs>
@@ -37,14 +37,15 @@
     <%= link_to 'Editar', edit_candidate_path(@candidate), class:"btn btn-primary"%>
     </div>
 
+  <div class="button-edit">
+    <%= link_to 'Voltar', candidates_path%>
+  </div>
+
     <div class="button-search">
     <%= link_to "Buscar Vagas", openings_path, class:"btn btn-primary"%>
     </div>
   <% end %>
 
-  <div class="button-edit">
-    <%= link_to 'Voltar', candidates_path, class:"btn btn-primary"%>
-  </div>
   <%= content_for(:after_js) do %>
     <script>
       const MyTabs = (function(){
