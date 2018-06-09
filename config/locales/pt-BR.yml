@@ -1,4 +1,14 @@
 pt-BR:
+  date:
+    order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d, %b"
+      long: "%d de %B, %Y"
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    #abbr_day_names: [D, S, T, Q, Q, S, S]
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    #abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
   activerecord:
     models:
       user: "Usuário"

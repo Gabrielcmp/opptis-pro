@@ -1,53 +1,64 @@
-<%= form_with(model: opening, local: true) do |form| %>
-  <% if opening.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(opening.errors.count, "error") %> prohibited this opening from being saved:</h2>
+<%= simple_form_for @opening do |c| %>
 
-      <ul>
-      <% opening.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="restaurant-new-1">
+      <div class="restaurant-text">
+        <h2>Qual é o título da vaga?</h2>
+        <%= c.input :title, label: false %>
+      </div>
+
+
+      <div class="restaurant-text">
+        <h2>A vaga é fixa ou temporária?</h2>
+        <%= c.input :type, collection: ['Fixa','Temporária'], label: false %>
+      </div>
+
+      <div class="restaurant-text">
+        <h2>Informe o turno de trabalho</h2>
+        <%= c.input :shift,collection:  ['Diurno', 'Noturno', 'Variável'], label: false %>
+      </div>
+
+
+      <div class="restaurant-text">
+        <h2>Qual a data de início?</h2>
+        <%= c.input :beginning_date, label: false%>
+        <p>Se a vaga for temporária, informe também uma data de encerramento</p>
+        <%= c.input :end_date, label: false%>
+      </div>
+
+
+      <div class="restaurant-form">
+       <%= link_to 'Próximo', '#restaurant-new-2', class: 'btn btn-primary'%>
+      </div>
+  </div>
+
+  <div id="restaurant-new-2">
+    <p>Diga suas preferências sobre o funcionário</p>
+    <div class="restaurant-text">
+      <h2>Você tem alguma preferência de gênero?</h2>
+      <%= c.input :pref_sex, collection: ['Ambos', 'Masculino', 'Feminino'], label: false %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <h2><%= form.label :title %>
-    <p><%= form.text_field :title, id: :opening_title %></h2></p>
+    <div class="restaurant-text">
+      <h2>Idade</h2>
+      <%= c.input :description, label: false, as: :text %>
+    </div>
+
+    <div class="restaurant-text">
+      <h2>Mais detalhes</h2>
+      <p>Conte um pouco mais sobre a vaga</p>
+      <p style="font-size: 10px">Máx. 140 caracteres</p>
+      <%= c.input :description, as: :text, label: false %>
+    </div>
+
+    <div class="restaurant-form">
+      <%= c.button :submit, "Concluir", class: 'btn btn-primary'%>
+    </div>
+
+    <div class="restaurant-form">
+      <%= link_to 'Voltar', '#restaurant-new-1' %>
+    </div>
+
   </div>
 
 
-  <div class="field">
-    <h2><%= form.label :beginning_date %></h2>
-    <p><%= form.text_field :beginning_date, id: :opening_beginning_date %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :end_date %></h2>
-    <p><%= form.text_field :end_date, id: :opening_end_date %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :pref_sex %></h2>
-    <p><%= form.text_field :pref_sex, id: :opening_pref_sex %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :pref_age %></h2>
-    <p><%= form.text_field :pref_age, id: :opening_pref_age %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :previous_experience %></h2>
-    <p><%= form.text_field :previous_experience, id: :opening_previous_experience %></p>
-  </div>
-
-  <div class="field">
-    <h2><%= form.label :description %></h2>
-    <p><%= form.text_area :description, id: :opening_description %></p>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
