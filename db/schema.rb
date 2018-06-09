@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180608191953) do
+ActiveRecord::Schema.define(version: 20180609150558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,8 +35,7 @@ ActiveRecord::Schema.define(version: 20180608191953) do
   create_table "candidaturas", force: :cascade do |t|
     t.bigint "candidate_id"
     t.bigint "opening_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "timestamps"
     t.index ["candidate_id"], name: "index_candidaturas_on_candidate_id"
     t.index ["opening_id"], name: "index_candidaturas_on_opening_id"
   end
@@ -53,6 +52,7 @@ ActiveRecord::Schema.define(version: 20180608191953) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "restaurant_id"
+    t.string "shift"
     t.index ["restaurant_id"], name: "index_openings_on_restaurant_id"
   end
 
