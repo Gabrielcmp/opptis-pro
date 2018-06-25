@@ -26,6 +26,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem 'carrierwave', '~> 0.11.2'
 gem 'cloudinary'
+gem 'sixarm_ruby_unaccent'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
