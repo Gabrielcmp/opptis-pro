@@ -1,11 +1,14 @@
 .opening-container {
   display: flex;
+  justify-content: center;
   padding: 3% 5%;
 }
 
-
+.opening-photo {
+  width: 180px;
+}
 .openings-details {
-  width: 70%;
+  width: 50%;
   h2 {
     padding-top: 0;
     margin-top: 0;
@@ -37,7 +40,7 @@
 
 
 .opening-actions {
-  width: 30%;
+  width: 150px;
 
   p{
     font-size: 18px;

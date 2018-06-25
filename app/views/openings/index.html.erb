@@ -3,12 +3,16 @@
 
     <% @openings.each do |opening| %>
     <div class="opening-container">
+      <div class="opening-photo">
+        <%= link_to cl_image_tag(opening.restaurant.photo, height: 250, width: 250, crop: :fill, class: 'logo-size-small'), opening.restaurant %>
+      </div>
       <div class="openings-details">
-        <h2><%= opening.title%></h2>
-        <h3><%= opening.previous_experience %> </h3>
+        <h2><%= link_to opening.title, opening %></h2>
+        <% if opening.previous_experience %>
+          <h4>Necessita experiência em restaurantes</h4>
+        <% end %>
+        <p><%= "Idade preferencial: #{opening.pref_age}" %></p>
         <p><%= opening.pref_sex %></p>
-        <p><%= opening.pref_age %></p>
-        <h4> <%= link_to 'Detalhes da vaga', opening %> </h4>
       </div>
       <% if current_user.role == 'restaurant' %>
         <div class="opening-actions">

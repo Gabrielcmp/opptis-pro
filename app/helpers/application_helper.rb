@@ -18,6 +18,6 @@ module ApplicationHelper
   end
 
   def favicon_link_tag
-    image_tag('favicon.ico')
+    image_tag('favicon.png')
   end
 end
