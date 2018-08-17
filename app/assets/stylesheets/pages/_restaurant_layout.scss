@@ -38,7 +38,7 @@
 .restaurant-tab {
   margin-bottom: 5vh;
   color: $gray1;
-  padding: 0 35% 5%;
+  padding: 0 5% 5%;
   h3 {
     font-size:18px;
     font-weight: 700;
@@ -116,10 +116,6 @@
      }
     }
 
-  .logo-size {
-  width:30%;
-    }
-
   .tab-selector {
   h2 {
     font-size: 14px;
@@ -155,4 +151,5 @@
       font-size: 12px;
     }
   }
+
 }

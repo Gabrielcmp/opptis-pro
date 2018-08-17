@@ -30,9 +30,14 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Sou Candidato", institucional_candidato_path %></li>
-          <li><%= link_to "Sou Restaurante", institucional_restaurante_path %></li>
-          <li><%= link_to "Registre-se", new_user_registration_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Sair") %>
+          <% end %></li>
+        <% else %>
+          <li><%= link_to "Registrar-se", new_user_registration_path , class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+          <li><%= link_to "Entrar", new_user_session_path , class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+        <% end %>
         </ul>
       </div>
     </div>
