@@ -13,6 +13,7 @@ pt-BR:
     models:
       user: "Usuário"
       candidate: 'Candidato'
+      opening:   'Vaga'
     attributes:
       user:
         user_name: "Nome do usuário"

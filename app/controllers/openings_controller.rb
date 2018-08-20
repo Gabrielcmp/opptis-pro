@@ -37,7 +37,7 @@ class OpeningsController < ApplicationController
     @opening.restaurant = current_user.restaurant
     respond_to do |format|
       if @opening.save
-        format.html { redirect_to @opening, notice: 'Opening was successfully created.' }
+        format.html { redirect_to @opening, notice: 'Vaga criada com sucesso.' }
         format.json { render :show, status: :created, location: @opening }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class OpeningsController < ApplicationController
   def update
     respond_to do |format|
       if @opening.update(opening_params)
-        format.html { redirect_to @opening, notice: 'Opening was successfully updated.' }
+        format.html { redirect_to @opening, notice: 'A Vaga foi atualizada.' }
         format.json { render :show, status: :ok, location: @opening }
       else
         format.html { render :edit }
@@ -65,7 +65,7 @@ class OpeningsController < ApplicationController
   def destroy
     @opening.destroy
     respond_to do |format|
-      format.html { redirect_to openings_url, notice: 'Opening was successfully destroyed.' }
+      format.html { redirect_to openings_url, notice: 'Vaga removida com sucesso.' }
       format.json { head :no_content }
     end
   end
