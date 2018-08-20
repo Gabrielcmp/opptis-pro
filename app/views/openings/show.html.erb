@@ -1,37 +1,34 @@
 
 
-    <div class="opening-container">
-       <div class="opening-logo-job">
-        <%= cl_image_tag(@opening.restaurant.photo, class:'logo-size-details', height: 250, width: 250, crop: :fill)%>
-      </div>
+<div class="opening-container">
+   <div class="opening-logo-job">
+    <%= cl_image_tag(@opening.restaurant.photo, class:'logo-size-details', height: 250, width: 250, crop: :fill)%>
+  </div>
 
-      <div class="openings-details-job">
-        <h2><%= @opening.title %></h2>
-        <h3><%= @opening.type %></h3>
-        <p> <%= @opening.beginning_date %></p>
-        <p> <%= @opening.end_date %></p>
-        <p> <%= @opening.pref_sex %></p>
-        <p> <%= @opening.pref_age %></h2>
-        <p> <%= @opening.previous_experience %></p>
-        <p> <%= @opening.description %></p>
-      </div>
-    </div>
-    <% if current_user.role == 'restaurant' %>
-      <div class="openings-details-button">
-        <%= link_to 'Editar', edit_opening_path(@opening) %> |
-        <%= link_to 'Voltar', openings_path %>
-        <%= render 'restaurant_candidaturas' unless @candidaturas.empty? %>
-      </div>
+  <div class="openings-details-job">
+    <h2><%= @opening.title %></h2>
+    <h3><%= @opening.type %></h3>
+    <p> <%= @opening.beginning_date %></p>
+    <p> <%= @opening.end_date %></p>
+    <p> <%= @opening.pref_sex %></p>
+    <p> <%= @opening.pref_age %></h2>
+    <p> <%= @opening.previous_experience %></p>
+    <p> <%= @opening.description %></p>
+  </div>
+</div>
+<% if current_user.role == 'restaurant' %>
+  <div class="openings-details-button">
+    <%= link_to 'Editar', edit_opening_path(@opening) %> |
+    <%= link_to 'Voltar', openings_path %>
+    <%= render 'restaurant_candidaturas' unless @candidaturas.empty? %>
+  </div>
+<% else %>
+  <div class="opening-btn">
+    <% if current_user.role = 'candidate' && !@candidatura.nil? && @candidatura.candidate == current_user.candidate %>
+      <%= link_to 'Cancelar candidatura', candidatura_path(@candidatura),
+      method: :delete, class: "btn btn-primary", data: { confirm: 'Tem certeza que deseja remover a candidatura?' } %>
     <% else %>
-    <div class="opening-btn">
-      <% if current_user.role = 'candidate' && !@candidatura.nil? && @candidatura.candidate == current_user.candidate %>
-        <%= link_to 'Cancelar candidatura', candidatura_path(@candidatura),
-        method: :delete, class: "btn btn-primary", data: { confirm: 'Tem certeza que deseja remover a candidatura?' } %>
-      <% else %>
-        <%= link_to 'Candidate-se', candidaturas_path(opening_id: @opening.id), method: :post, class: "btn btn-primary" %>
-      <% end %>
-    </div>
+      <%= link_to 'Candidate-se', candidaturas_path(opening_id: @opening.id), method: :post, class: "btn btn-primary" %>
     <% end %>
-
-
+  </div>
 <% end %>
