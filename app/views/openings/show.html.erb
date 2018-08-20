@@ -20,7 +20,7 @@
   <div class="openings-details-button">
     <%= link_to 'Editar', edit_opening_path(@opening) %> |
     <%= link_to 'Voltar', openings_path %>
-    <%= render 'restaurant_candidaturas' unless @candidaturas&.empty? %>
+    <%= render 'restaurant_candidaturas' if @candidaturas.present? %>
   </div>
 <% else %>
   <div class="opening-btn">
