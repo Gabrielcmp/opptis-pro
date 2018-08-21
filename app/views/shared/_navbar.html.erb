@@ -6,8 +6,10 @@
       <% if user_signed_in? %>
         <% if current_user.restaurant.present? %>
           <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), restaurant_path(current_user.restaurant), class: "navbar-wagon-brand" %>
-        <% else %>
+        <% elsif current_user.candidate.present? %>
           <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), candidate_path(current_user.candidate), class: "navbar-wagon-brand" %>
+        <% else %>
+          <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), root_path, class: "navbar-wagon-brand" %>
         <% end %>
       <% else %>
         <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), root_path, class: "navbar-wagon-brand" %>

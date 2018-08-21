@@ -21,8 +21,13 @@
 
       <div class="candidate-text">
         <h2>Qual é o seu endereço?</h2>
-        <p>Caso o seu endereço não seja encontrado, indicar uma rua principal próxima.</p>
         <p>*Esta informação será usada para calcular quantos transportes serão necessários para chegar até o emprego.</p>
+        <%= c.input :address, label: false %>
+      </div>
+
+      <div class="candidate-text">
+        <h2>Por favor, informe sua data de nascimento</h2>
+        <%= c.input :birth_date, label: false %>
       </div>
 
       <div class="candidate-form candidate-address">
