@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   #Models
-  resources :openings
+  resources :openings do
+    collection do
+      get :candidate
+    end
+  end
   resources :restaurants
   resources :candidates
   resources :candidaturas, only: [:create, :destroy]

@@ -11,7 +11,8 @@
           <%= link_to "Minhas Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <% elsif user_signed_in? && current_user.candidate.present? %>
           <%= link_to "Perfil", current_user.candidate, class: "navbar-wagon-item navbar-wagon-link" %>
-          <%= link_to "Minhas Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Buscar Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Minhas Vagas", candidate_openings_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <% else %>
           <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <%= link_to "Sou Candidato", institucional_candidato_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -42,7 +43,8 @@
           <li><%= link_to "Minhas Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
         <% elsif user_signed_in? && current_user.candidate.present? %>
           <li><%= link_to "Perfil", current_user.candidate, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
-          <li><%= link_to "Minhas Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+          <li><%= link_to "Buscar Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+          <li><%= link_to "Minhas Vagas", candidate_openings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <% else %>
           <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
           <li><%= link_to "Sou Candidato", institucional_candidato_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>

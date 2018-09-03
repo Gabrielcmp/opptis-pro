@@ -1,9 +1,14 @@
   <div class="profile-data">
 
+    <p style="font-size: 12px; font-style: italic;"> Esta informação é privada. Seu contato só será divulgado para os restaurantes que você se candidatar.</p>
+
     <h3>Telefone:</h3>
     <p><%= @candidate.phone %></p>
 
     <h3>Email:</h3>
+    <p><%= @candidate.user.email %></p>
+
+    <h3>Endereço:</h3>
     <p><%= @candidate.address %></p>
 
   </div>

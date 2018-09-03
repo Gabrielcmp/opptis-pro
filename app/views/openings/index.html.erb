@@ -1,7 +1,7 @@
     <% @openings.each do |opening| %>
     <div class="opening-container">
       <div class="opening-photo">
-        <%= link_to cl_image_tag(opening.restaurant.photo, height: 250, width: 250, crop: :fill, class: 'logo-size-small'), opening.restaurant %>
+        <%= link_to cl_image_tag(opening.restaurant.photo, height: 250, width: 250, crop: :fill, class: 'logo-size-small'), opening %>
       </div>
       <div class="openings-details">
         <h2><%= link_to opening.title, opening %></h2>

@@ -1,18 +1,12 @@
-<div class="wrapper-registration">
-
-  <div class="candidato-logo">
+  <div class="restaurante-logo wrapper-registration">
     <%= cl_image_tag @candidate.photo, height: 250, width: 250, crop: :fill, class: 'logo-size' %>
-    <h1><%= @candidate.name %></h1>
+    <h1><%= @candidate.user.name %></h1>
   </div>
-  <div data-tabs>
+  <div data-tabs class='wrapper-registration'>
 
     <div class="tab-container">
       <div data-tabs-item="1" data-tabs-active class="tab-selector">
-        <h2>Endereço</h2>
-      </div>
-
-      <div data-tabs-item="2" class="tab-selector">
-        <h2>Experiência</h2>
+        <h2>Perfil</h2>
       </div>
 
       <% if current_user.candidate == @candidate %>
@@ -41,9 +35,6 @@
     <%= link_to 'Voltar', candidates_path%>
   </div>
 
-    <div class="button-search">
-    <%= link_to "Buscar Vagas", openings_path, class:"btn btn-primary"%>
-    </div>
   <% end %>
 
   <%= content_for(:after_js) do %>
@@ -85,4 +76,9 @@
       MyTabs.init();
     </script>
   <% end %>
-</div>
+
+  <%= link_to openings_path do %>
+    <div class="button-search">
+      <p>Buscar Vagas</p>
+    </div>
+  <% end %>

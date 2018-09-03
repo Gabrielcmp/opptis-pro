@@ -13,13 +13,20 @@ class OpeningsController < ApplicationController
     end
   end
 
+
+  def candidate
+    if current_user.role == 'candidate'
+      @openings = Candidatura.where(candidate: current_user.candidate).map{ |c| c.opening }
+    end
+    render 'index'
+  end
   # GET /openings/1
   # GET /openings/1.json
   def show
     if current_user.role == 'restaurant' && @opening.restaurant == current_user.restaurant
       @candidaturas = Candidatura.where(opening: @opening)
     elsif current_user.role == 'candidate'
-      @candidatura = Candidatura.find_by(candidate: current_user.candidate.id)
+      @candidatura = Candidatura.find_by(candidate: current_user.candidate.id, opening: @opening)
     end
   end
 
