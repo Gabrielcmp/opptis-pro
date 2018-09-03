@@ -23,11 +23,14 @@
     <% end %>
 
     <div class="button-profile">
-        <p><%= link_to 'Voltar para o Perfil', @restaurant%></p>
+        <p><%= link_to 'Voltar para o Perfil', @profile%></p>
     </div>
 
-<br>
+  <% if current_user.role == 'restaurant' %>
+    <%= link_to new_opening_path do %>
+      <div class="button-search">
+        <p>Cadastrar Nova Vaga</p>
+      </div>
+    <% end %>
+  <% end %>
 
-    <div class="button-search">
-      <%= link_to "Cadastrar Nova Vaga", new_opening_path, class:"btn btn-primary"%>
-    </div>

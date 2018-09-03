@@ -1,6 +1,6 @@
 <%= simple_form_for @opening do |c| %>
 
-  <div class="restaurant-new-1">
+  <div id="opening-new-1">
       <div class="restaurant-text">
         <h2>Qual é o título da vaga?</h2>
         <%= c.input :title, label: false %>
@@ -27,11 +27,11 @@
 
 
       <div class="restaurant-form">
-       <%= link_to 'Próximo', '#restaurant-new-2', class: 'btn btn-primary'%>
+       <%= link_to 'Próximo', '#opening-new-2', class: 'btn btn-primary'%>
       </div>
   </div>
 
-  <div id="restaurant-new-2">
+  <div id="opening-new-2">
     <br>
     <br>
     <br>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="restaurant-form">
-      <%= link_to 'Voltar', '#restaurant-new-1' %>
+      <%= link_to 'Voltar', '#opening-new-1' %>
     </div>
 
   </div>

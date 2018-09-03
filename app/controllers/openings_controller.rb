@@ -6,8 +6,10 @@ class OpeningsController < ApplicationController
   def index
     if current_user.role == 'restaurant'
       @openings = Opening.where(restaurant: current_user.restaurant)
+      @profile  = current_user.restaurant
     else
       @openings = Opening.all
+      @profile  = current_user.candidate
     end
   end
 

@@ -3,22 +3,20 @@
     <div class="navbar-wagon-left">
 
       <!-- Logo -->
-      <% if user_signed_in? %>
-        <% if current_user.restaurant.present? %>
-          <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), restaurant_path(current_user.restaurant), class: "navbar-wagon-brand" %>
-        <% elsif current_user.candidate.present? %>
-          <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), candidate_path(current_user.candidate), class: "navbar-wagon-brand" %>
-        <% else %>
-          <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), root_path, class: "navbar-wagon-brand" %>
-        <% end %>
-      <% else %>
-        <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), root_path, class: "navbar-wagon-brand" %>
-      <% end %>
+      <%= link_to image_tag('http://res.cloudinary.com/dskbrfm0n/image/upload/c_scale,w_150/v1517450057/logo_bmz6wf.png', id: 'logo'), root_path, class: "navbar-wagon-brand" %>
       <!-- Left Navigation -->
       <div class="navbar-large-menu hidden-xs hidden-sm">
-        <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Sou Candidato", institucional_candidato_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Sou Restaurante", institucional_restaurante_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <% if user_signed_in? && current_user.restaurant.present? %>
+          <%= link_to "Perfil", current_user.restaurant, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Minhas Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <% elsif user_signed_in? && current_user.candidate.present? %>
+          <%= link_to "Perfil", current_user.candidate, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Minhas Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <% else %>
+          <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Sou Candidato", institucional_candidato_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Sou Restaurante", institucional_restaurante_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <% end %>
       </div>
       <!-- Profile picture with dropdown list -->
     </div>
@@ -39,6 +37,17 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <% if user_signed_in? && current_user.restaurant.present? %>
+          <li><%= link_to "Perfil", current_user.restaurant, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+          <li><%= link_to "Minhas Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+        <% elsif user_signed_in? && current_user.candidate.present? %>
+          <li><%= link_to "Perfil", current_user.candidate, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+          <li><%= link_to "Minhas Vagas", openings_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+        <% else %>
+          <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+          <li><%= link_to "Sou Candidato", institucional_candidato_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+          <li><%= link_to "Sou Restaurante", institucional_restaurante_path, class: "navbar-wagon-item navbar-wagon-link", style: "color: #4169df;" %></li>
+        <% end %>
         <% if user_signed_in? %>
           <li><%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Sair") %>

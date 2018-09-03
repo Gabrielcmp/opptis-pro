@@ -1,7 +1,7 @@
 .restaurante-logo {
   text-align: center;
   background-color: $blue1;
-  padding: 10% 0;
+  padding: 5% 0 2%;
   h1 {
     color: #ffffff;
     font-weight: 600;
@@ -32,6 +32,11 @@
   width: 50vw;
   justify-content: center;
   text-align: center;
+  background-color: #eee;
+}
+
+[data-tabs-active] {
+  background-color: white !important;
 }
 
 .profile-data,
@@ -58,8 +63,27 @@
   background-color: $blue1;
   padding: 1% 0;
   text-align: center;
+  p {
+    font-size: 20px;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+  }
 }
 
+.button-search:hover {
+
+  background-color: #2b58db;
+}
+
+.button-search:active {
+  background-color: #1d41ac;
+}
+
+a:hover {
+  text-decoration: none;
+}
 .restaurant-text {
   text-align: center;
     h2 {

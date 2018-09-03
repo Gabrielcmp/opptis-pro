@@ -91,8 +91,8 @@
 }
 
 .opening-logo-job {
-  width: 50%;
   text-align: right;
+  padding: 0 5%;
 }
 
 .logo-size-details {
@@ -112,6 +112,13 @@
 .opening-btn {
   text-align: center;
   margin: 0 0 10%
+}
+
+#opening-new-1 {
+  height: 100vh;
+}
+#opening-new-2 {
+  height: 100vh;
 }
 
 @media screen and (max-width: 768px) {

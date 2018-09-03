@@ -1,11 +1,9 @@
-<div class="wrapper-registration">
-
-  <div class="restaurante-logo">
+  <div class="restaurante-logo wrapper-registration">
     <%= cl_image_tag @restaurant.photo, height: 250, width: 250, crop: :fill, class: 'logo-size' %>
     <h1> <%= @restaurant.name%></h1>
   </div>
 
-  <div data-tabs>
+  <div data-tabs class="wrapper-registration">
 
     <div class="tab-container">
 
@@ -28,9 +26,6 @@
 
       <div class="button-edit">
         <%= link_to "Editar", edit_restaurant_path, class:"btn btn-primary"%>
-      </div>
-      <div class="button-search">
-        <%= link_to "Buscar Candidatos", openings_path, class:"btn btn-primary"%>
       </div>
 
     <% end %>
@@ -75,4 +70,8 @@
       <% end %>
 
   </div>
-</div>
+    <%= link_to openings_path do %>
+      <div class="button-search">
+        <p>Buscar Candidatos</p>
+      </div>
+    <% end %>
