@@ -1,0 +1,82 @@
+{
+  "id": "nao_obrig2",
+  "author": {
+    "name": "NO2",
+    "email": "",
+    "document": "",
+    "copyright": ""
+  },
+  "support": {
+    "url": "https://cyberlabs.ai/contato/",
+    "email": "contato@cyberlabs.ai"
+  },
+  "version": "1.0.0",
+  "access": {
+    "public": false,
+    "frequency": "1/7",
+    "mandatory": false
+  },
+  "view": {
+    "title": {
+      "ptBR": "Formulário COVID-19"
+    },
+    "description": {
+      "ptBR": "Formulário de saúde para COVID-19 criado por Furnas em parceria com Cyberlabs.ai"
+    }
+  },
+  "api": {
+    "post": "",
+    "exceptions": ""
+  },
+  "pages": [
+    {
+      "id": "FormCompleted",
+      "type": "success",
+      "text": {
+        "ptBR": "Obrigado por preencher o formulário"
+      }
+    },
+    {
+      "id": "FormError",
+      "type": "failure",
+      "text": {
+        "ptBR": "Ocorreu um erro, por favor preencher de novo"
+      }
+    },
+    {
+      "id": "pag1",
+      "type": "fields",
+      "questions": [
+        {
+          "required": false,
+          "visible": true,
+          "question": {
+            "id": "habitos-q1",
+            "answers": [
+              {
+                "id": "ans1",
+                "expected": false,
+                "weight": 0
+              },
+              {
+                "id": "ans2",
+                "expected": true,
+                "weight": 2
+              },
+              {
+                "id": "ans3",
+                "expected": true,
+                "weight": 4
+              },
+              {
+                "id": "ans4",
+                "expected": true,
+                "weight": 6
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
