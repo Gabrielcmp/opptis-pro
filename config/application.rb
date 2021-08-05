@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 I18n.default_locale = :'pt-BR'
 
+
 module OpptisPro
   class Application < Rails::Application
     config.generators do |generate|
