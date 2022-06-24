@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def restaurante
   end
+
+  def solver
+  end
 end

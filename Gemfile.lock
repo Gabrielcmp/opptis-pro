@@ -97,6 +97,10 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     faker (2.19.0)
@@ -321,6 +325,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails
   devise
+  dotenv-rails
   faker
   figaro
   font-awesome-sass
@@ -346,7 +351,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   uglifier
   web-console (>= 3.3.0)
-  webpacker
+  webpacker (~> 5.x)
 
 RUBY VERSION
    ruby 3.0.0p0

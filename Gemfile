@@ -12,6 +12,7 @@ gem 'rails', '~> 6.0.0'
 gem 'redis'
 gem 'omniauth-facebook'
 gem 'i18n'
+gem 'dotenv-rails'
 
 gem 'sentry-ruby'
 gem 'sentry-rails'
@@ -22,7 +23,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'uglifier'
 gem 'faker'
-gem 'webpacker'
+gem 'webpacker', '~> 5.x'
 gem 'social-share-button'
 
 gem "geocoder"
